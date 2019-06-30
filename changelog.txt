@@ -1,0 +1,70 @@
+v0.3.8 (2019-06-29)
+- Added exception handler for reading IMDb ID from files
+
+v0.3.7 (2019-05-05)
+- IMDb ID can be read from files
+
+v0.3.6 (2019-04-25)
+- Changed threads tasks for episodes
+
+v0.3.5 (2019-04-21)
+- Added selection for votes update
+
+v0.3.4 (2019-04-20)
+- Changed smartimdb
+- Changed saved JSON data
+
+v0.3.3 (2019-04-14)
+- Changes, bugfixes ...
+- Add file queue for DB writing tasks
+
+v0.3.2 (2019-04-14)
+- Changed: threads, classes (for better inheritance)
+- Blocked running twice
+
+v0.3.1 (2019-04-14)
+- Changes in threads
+
+v0.3.0 (2019-04-11)
+- Decreased threads number for better stability
+
+v0.2.2 (2019-04-11)
+- Changes, fixes ...
+
+v0.2.1 (2019-04-10)
+- First attempt to TVShows
+
+v0.2.0 (2019-04-09)
+- New icon
+
+v0.1.8 (2019-04-08)
+- New IMDB scrapper
+
+v0.1.7 (2019-04-07)
+- Removed locking in threads for better queue use
+
+v0.1.6 (2019-04-06)
+- Writing DB moved to thread
+
+v0.1.5 (2019-03-30)
+- Changed: counters for queue objects removed
+
+v0.1.4 (2019-03-29)
+- Many changes
+- Added time and notification
+
+v0.1.3 (2019-03-28)
+- New idea: classess
+- Changed: from files to objects
+
+v0.1.2 (2019-03-27)
+- Bug fixed, first full working version
+
+v0.1.1
+- Changed: calling JSON by dictionary
+
+v0.1.0 (2019-03-26)
+- Movie updating from IMDB is working
+
+v0.0.1 (2019-03-25)
+- Initial version
