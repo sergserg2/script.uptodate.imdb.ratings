@@ -66,6 +66,8 @@ class TimeNotification:
 
         def stop(self):
                 self.stopTime = int(round(time.time()))
+                if self.stopTime == self.startTime:
+                        self.stopTime += 1
         
         def show(self, header, txt):
                 if isinstance(header, str):
