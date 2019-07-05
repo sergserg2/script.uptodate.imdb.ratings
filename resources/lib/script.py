@@ -13,6 +13,8 @@ import unicodedata
 import threading
 import Queue
 import time
+import resources.tvdbsimple as tvdb
+tvdb.KEYS.API_KEY = 'PTT1BSWA8O4IZBII'
 
 
 ADDON 		= xbmcaddon.Addon()
@@ -385,6 +387,17 @@ def movie_thread(qqTasks, qqChanged, qqEpisodes):
                 	logger.log('%sid %d (%s) checking IMDb %s' %
                 	        (movieData.type, movieData.id, movieData.title, movieData.imdb))
                 if not isIMDbRating:
+                        if not movieData.imdb:
+                                if movieData.type == 'tvshow' and not movieData.tvdb == None:
+                                        logger.log('checking TVDb %s for IMDb number' % movieData.tvdb)
+                                        tvdb_show = tvdb.Series(movieData.tvdb)
+                                        tvdb_resp = tvdb_show.info()
+                                        try:
+                                                movieData.imdb = tvdb_show.imdbId
+                                                movieData.update_imdbid = True
+                                                logger.log('found IMDb number %s' % movieData.imdb)
+                                        except:
+                                                pass
                         if not movieData.imdb:
                                 logger.log('missing IMDb number')
                                 movieData.saveFailed()
