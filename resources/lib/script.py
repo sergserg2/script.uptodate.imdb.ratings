@@ -114,8 +114,9 @@ class JSONMovieParser:
                         f = xbmcvfs.File(ADDON_TOUPDATE + self.type + '_' + str(self.id) + '.dump', 'r')
                         try:
                                 toUpdate = json.load(f)
-               			self.imdb = toUpdate['imdb']	
-                                self.update_imdbid = True
+                                if not toUpdate['imdb'] == None:
+                                        self.imdb = toUpdate['imdb']	
+                                        self.update_imdbid = True
                         except:
                                 pass
                         f.close()
