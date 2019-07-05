@@ -387,16 +387,16 @@ def movie_thread(qqTasks, qqChanged, qqEpisodes):
                 	logger.log('%sid %d (%s) checking IMDb %s' %
                 	        (movieData.type, movieData.id, movieData.title, movieData.imdb))
                 if not isIMDbRating:
-                        if not movieData.imdb:
+#                        if not movieData.imdb:
 #                                if movieData.type == 'tvshow' and not movieData.tvdb == None:
-                                if movieData.type == 'tvshow':
-                                        logger.log('checking TVDb %s for IMDb number' % movieData.tvdb)
-                                        tvdb_show = tvdb.Series(movieData.tvdb)
-                                        tvdb_resp = tvdb_show.info()
-                                        if not tvdb_show.imdbId == None:
+                        if movieData.type == 'tvshow':
+                                logger.log('checking TVDb %s for IMDb number' % movieData.tvdb)
+                                tvdb_show = tvdb.Series(movieData.tvdb)
+                                tvdb_resp = tvdb_show.info()
+                                if not tvdb_show.imdbId == None:
 #                                                movieData.imdb = tvdb_show.imdbId
 #                                                movieData.update_imdbid = True
-                                                logger.log('found IMDb number %s' % movieData.imdb)
+                                        logger.log('found IMDb number %s' % movieData.imdb)
                         if not movieData.imdb:
                                 logger.log('missing IMDb number')
                                 movieData.saveFailed()
